@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Intercom.Phone" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/brand_light</item>
+        <item name="colorControlActivated">@color/brand</item>
+        <item name="android:colorBackground">@color/app_bg</item>
+        <item name="colorSurface">@color/app_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:windowBackground">@color/app_bg</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <!-- The green toolbar carries on into the status bar, with light icons. -->
+        <item name="android:statusBarColor">@color/toolbar_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/app_bg</item>
+    </style>
+
+    <style name="Theme.Intercom.Phone.Call" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="android:windowBackground">@color/call_bg</item>
+        <item name="android:statusBarColor">@color/call_bg</item>
+        <item name="android:navigationBarColor">@color/call_bg</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Round icon-only button on the call screen. -->
+    <style name="Intercom.CallButton" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconSize">32dp</item>
+        <item name="iconTint">@color/white</item>
+        <item name="backgroundTint">@color/call_button</item>
+    </style>
+
+    <style name="Intercom.CallLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">@color/call_text_dim</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

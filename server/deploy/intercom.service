@@ -1,0 +1,43 @@
+[Unit]
+Description=Grandpa Intercom signalling server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=intercom
+Group=intercom
+WorkingDirectory=/opt/intercom/server
+EnvironmentFile=/etc/intercom/intercom.env
+ExecStart=/usr/bin/node /opt/intercom/server/src/index.js
+Restart=always
+RestartSec=3
+
+# The server must read the Let's Encrypt private key to terminate TLS itself.
+# setup.sh grants the intercom user group access to /etc/letsencrypt/live.
+SupplementaryGroups=ssl-cert
+
+# setup.sh sets PORT=443, which an unprivileged user cannot bind. Grant exactly
+# that one capability rather than running as root.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+# Hardening: this process needs the network, one data directory and the certs.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/intercom
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=intercom
+
+[Install]
+WantedBy=multi-user.target

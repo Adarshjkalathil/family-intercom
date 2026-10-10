@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- WhatsApp's dark palette. A TV is dark, so there is no light variant. -->
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="surface">#FF0B141A</color>
+    <color name="surface_card">#FF202C33</color>
+    <color name="surface_focus">#FF2A3942</color>
+    <color name="scrim">#CC0B141A</color>
+
+    <color name="text_primary">#FFE9EDEF</color>
+    <color name="text_dim">#FF8696A0</color>
+
+    <color name="brand">#FF00A884</color>
+    <color name="brand_light">#FF25D366</color>
+    <color name="ok_green">#FF00A884</color>
+    <color name="amber">#FFFFB300</color>
+    <color name="danger">#FFF15C6D</color>
+
+    <!-- Used for the border that says the camera is live. Chosen to be
+         unmistakable on a TV across a room, not tasteful. -->
+    <color name="live_red">#FFE53935</color>
+</resources>

@@ -1,0 +1,62 @@
+[versions]
+# --- build tooling ---------------------------------------------------------
+agp = "8.7.3"
+kotlin = "2.0.21"
+googleServices = "4.4.2"
+compileSdk = "35"
+minSdk = "26"
+targetSdk = "34"
+
+# --- androidx / google -----------------------------------------------------
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+lifecycle = "2.8.7"
+activity = "1.9.3"
+constraintlayout = "2.1.4"
+material = "1.12.0"
+coroutines = "1.9.0"
+okhttp = "4.12.0"
+firebaseBom = "33.7.0"
+
+# --- the two that carry version risk ---------------------------------------
+# Neither could be verified from the build environment these were written in.
+# If CI fails resolving one, see docs/05-troubleshooting.md - it is a one-line
+# fix here, not a code change.
+#
+# webrtc: the maintained community fork of Google's abandoned org.webrtc artifact.
+#   Known-good alternatives: "125.6422.04", "119.6045.03", "114.5735.02"
+webrtc = "125.6422.07"
+# uvc: USB webcam capture. Alternative artifact if this one will not resolve:
+#   com.github.shiyinghan:UVCAndroid (via jitpack), same API.
+uvc = "1.0.7"
+
+[libraries]
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-service = { module = "androidx.lifecycle:lifecycle-service", version.ref = "lifecycle" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging-ktx" }
+
+webrtc = { module = "io.github.webrtc-sdk:android", version.ref = "webrtc" }
+uvc-camera = { module = "com.herohan:UVCAndroid", version.ref = "uvc" }
+
+junit = { module = "junit:junit", version = "4.13.2" }
+# The real org.json, so unit tests exercise the same parsing the app does
+# instead of the android.jar stub that throws on every call.
+json = { module = "org.json:json", version = "20240303" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }

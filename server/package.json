@@ -1,0 +1,18 @@
+{
+  "name": "grandpa-intercom-server",
+  "version": "1.0.0",
+  "description": "Signalling + push relay for the TV intercom. Runs on Oracle Cloud Always Free.",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node test/smoke.js && node test/timeout.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "comment": "No dependencies on purpose. The WebSocket server (src/ws-server.js) and the Google OAuth signing (src/fcm.js) are implemented against node's standard library, so there is nothing to npm install on the VM and no supply chain to patch.",
+  "dependencies": {}
+}

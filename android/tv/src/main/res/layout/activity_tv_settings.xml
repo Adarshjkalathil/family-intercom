@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Connection details and remote buttons, kept off the front screen. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="72dp"
+        android:paddingVertical="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back"
+                style="@style/Intercom.Tv.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:text="@string/back"
+                app:icon="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:text="@string/settings_title"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/Intercom.Tv.Section"
+            android:layout_marginTop="36dp"
+            android:text="@string/connection_section" />
+
+        <TextView
+            style="@style/Intercom.Tv.Label"
+            android:text="@string/setup_server" />
+
+        <EditText
+            android:id="@+id/serverUrl"
+            style="@style/Intercom.Tv.Field"
+            android:autofillHints="url"
+            android:hint="@string/setup_server_hint"
+            android:inputType="textUri" />
+
+        <TextView
+            style="@style/Intercom.Tv.Label"
+            android:text="@string/setup_secret" />
+
+        <EditText
+            android:id="@+id/homeSecret"
+            style="@style/Intercom.Tv.Field"
+            android:autofillHints="password"
+            android:hint="@string/setup_secret_hint"
+            android:inputType="textPassword" />
+
+        <TextView
+            style="@style/Intercom.Tv.Label"
+            android:text="@string/setup_name" />
+
+        <EditText
+            android:id="@+id/displayName"
+            style="@style/Intercom.Tv.Field"
+            android:autofillHints="name"
+            android:hint="@string/setup_name_hint"
+            android:inputType="textPersonName|textCapWords" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Intercom.Tv.Button.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/setup_save" />
+
+        <TextView
+            style="@style/Intercom.Tv.Section"
+            android:layout_marginTop="48dp"
+            android:text="@string/key_section" />
+
+        <TextView
+            android:id="@+id/keyBindings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@color/text_dim"
+            android:textSize="20sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/learnKeys"
+            style="@style/Intercom.Tv.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/setup_learn_keys" />
+    </LinearLayout>
+</ScrollView>

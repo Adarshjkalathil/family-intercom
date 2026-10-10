@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  flagRequestFilterKeyEvents plus canRequestFilterKeyEvents is the whole point:
+  it is what lets the service see key presses while another app is in the
+  foreground. Without it the macro pad only works when our app is already on
+  screen, which defeats the purpose.
+
+  No accessibilityEventTypes are requested - this service reads keys and nothing
+  about screen content.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagRequestFilterKeyEvents|flagReportViewIds"
+    android:canRequestFilterKeyEvents="true"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_warning" />

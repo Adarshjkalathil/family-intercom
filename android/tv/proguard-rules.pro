@@ -1,0 +1,5 @@
+-keep class org.webrtc.** { *; }
+-keep class com.herohan.uvcapp.** { *; }
+-keep class com.serenegiant.** { *; }
+-dontwarn org.webrtc.**
+-dontwarn com.serenegiant.**

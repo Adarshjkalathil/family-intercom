@@ -1,0 +1,31 @@
+{
+  // The signalling server on Cloudflare's free Workers plan - the no-VM
+  // alternative to server/. Same wire protocol; the apps only need its URL.
+  "name": "intercom",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": true,
+
+  // One Durable Object holds the whole household: every device's socket, the
+  // device registry and the active call. SQLite-backed, which is the only
+  // Durable Object storage the free plan offers.
+  "durable_objects": {
+    "bindings": [{ "name": "INTERCOM", "class_name": "Intercom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Intercom"] }],
+
+  // Secrets are set with `npx wrangler secret put <NAME>`, never written here:
+  //   HOME_SECRET          required, 20+ characters, typed into every app
+  //   METERED_API_KEY      Open Relay TURN key (free, 20 GB/month)
+  //   FCM_SERVICE_ACCOUNT  Firebase service account JSON, for waking phones
+  "vars": {
+    // Your Metered app name: the "<name>" in <name>.metered.live.
+    "METERED_APP_NAME": ""
+    // Optional: the most devices in one call, the TV included. Leave it out
+    // for no limit; set it if grandpa's TV struggles with a big family call.
+    // "MAX_CALL_MEMBERS": "6"
+  },
+
+  // Lets `npx wrangler tail` and the dashboard show the [call]/[ws] log lines.
+  "observability": { "enabled": true }
+}

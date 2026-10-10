@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The border drawn around the entire screen for as long as the camera is
+  transmitting during an auto-answered check-in. It is thick and red on purpose:
+  grandpa must be able to tell from across the room, without reading anything,
+  that he is on camera. See the privacy note in TvCallActivity.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="10dp"
+        android:color="@color/live_red" />
+</shape>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Family Intercom</string>
+
+    <!-- Home -->
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="grandpas_tv">Grandpa\'s TV</string>
+    <string name="tv_online">Online</string>
+    <string name="tv_offline">Offline</string>
+    <string name="tv_not_setup">No TV connected yet</string>
+    <string name="set_up_title">Set up this phone</string>
+    <string name="set_up_body">Add the server address and home secret to connect to the TV.</string>
+    <string name="open_settings">Set up</string>
+
+    <string name="call_grandpa">Video call the TV</string>
+    <string name="show_me_on_tv">Put me on the TV</string>
+    <string name="check_in">Check in</string>
+    <!-- Shown under the check-in button. He should know this exists. -->
+    <string name="check_in_explainer">Check-in opens the TV camera without him answering. The TV plays a chime and shows a red border the whole time.</string>
+
+    <!-- Call screen -->
+    <string name="call_encrypted">End-to-end encrypted</string>
+    <string name="answer">Answer</string>
+    <string name="decline">Decline</string>
+    <string name="hang_up">End</string>
+    <string name="mute">Mute</string>
+    <string name="unmute">Unmute</string>
+    <string name="switch_camera">Flip</string>
+    <string name="incoming_from">%1$s is calling</string>
+    <string name="calling">Calling…</string>
+    <string name="connecting">Connecting…</string>
+    <string name="call_in_progress">Call in progress</string>
+
+    <!-- Why a call ended, shown for a moment on the call screen -->
+    <string name="ended_call">Call ended</string>
+    <string name="ended_declined">Declined</string>
+    <string name="ended_tv_declined">The TV declined</string>
+    <string name="ended_no_answer">No answer</string>
+    <string name="ended_missed">Missed call</string>
+    <string name="ended_answered_elsewhere">Answered on another phone</string>
+    <string name="ended_connection_lost">Connection lost</string>
+    <string name="ended_unreachable">Could not reach the server</string>
+    <string name="ended_failed">Could not connect the call</string>
+    <string name="ended_tv_busy">The TV is already on a call</string>
+    <string name="ended_no_tv">The TV is not set up yet</string>
+    <string name="ended_call_full">The call is full</string>
+    <string name="join_call">Join the call</string>
+    <string name="tv_in_call">In a call with %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_connection">Connection</string>
+    <string name="settings_connection_help">Get these from whoever set up the intercom.</string>
+    <string name="setup_server">Server address</string>
+    <string name="setup_server_hint">wss://intercom.example.workers.dev/ws</string>
+    <string name="setup_secret">Home secret</string>
+    <string name="setup_secret_hint">Same secret as the TV</string>
+    <string name="setup_name">Your name</string>
+    <string name="setup_name_hint">Alex</string>
+    <string name="settings_name_help">Shown on grandpa\'s TV when you call</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+
+    <string name="status_connected">Connected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_offline">Offline</string>
+    <string name="status_not_configured">Not set up yet</string>
+    <string name="status_unauthorised">Wrong home secret — check Settings</string>
+
+    <string name="no_push_warning">Built without google-services.json, so this phone will only ring while the app is open. See docs/02-firebase.md.</string>
+    <string name="permissions_needed">Camera, microphone and notification permissions are needed for calls.</string>
+</resources>

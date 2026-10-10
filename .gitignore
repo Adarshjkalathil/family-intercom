@@ -1,0 +1,18 @@
+node_modules/
+out/
+*.log
+.DS_Store
+Thumbs.db
+.wrangler/
+.dev.vars
+
+# Python bytecode from tools/
+__pycache__/
+
+# Local build downloads and raw device screenshots; README images live in docs/screenshots
+build-out/
+
+# Personal: a signing key and your Firebase project. See android/keystore/README.md.
+android/keystore/*.jks
+android/keystore/release.properties
+android/phone/google-services.json

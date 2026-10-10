@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The whole of grandpa's interface.
+
+  Layered back to front: remote video fills the screen, our own camera sits small
+  in a corner, a scrim carries the large text, and the live border sits on top of
+  everything so it cannot be hidden by anything else.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:keepScreenOn="true">
+
+    <!--
+      Everyone we are talking to: the whole screen for one person, a grid with
+      names for a group. Each picture is shown whole rather than cropped, so a
+      phone held upright shows a face, not a zoomed strip of one.
+    -->
+    <com.kalathil.intercom.core.VideoGrid
+        android:id="@+id/remoteGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Our own camera, small, so he can see he is in frame. -->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/localVideo"
+        android:layout_width="280dp"
+        android:layout_height="158dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="40dp"
+        android:visibility="gone" />
+
+    <!-- Text over video needs a scrim or it is unreadable on bright frames. -->
+    <LinearLayout
+        android:id="@+id/statusPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/scrim"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="48dp">
+
+        <!-- Tinted per state by TvCallActivity: green, amber or red. -->
+        <FrameLayout
+            android:id="@+id/avatar"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginBottom="36dp"
+            android:background="@drawable/avatar_circle">
+
+            <ImageView
+                android:id="@+id/avatarIcon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_videocam"
+                android:tint="@color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/headline"
+            style="@style/TvHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/subhead"
+            style="@style/TvSubhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Small persistent caption during a call, once the big panel is hidden. -->
+    <TextView
+        android:id="@+id/caption"
+        style="@style/TvSubhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="40dp"
+        android:background="@color/scrim"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <!--
+      Drawn last, so nothing can cover it. Visible for the entire time an
+      auto-answered check-in has the camera open.
+    -->
+    <View
+        android:id="@+id/liveBorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/live_border"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/liveLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="18dp"
+        android:background="@color/live_red"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="8dp"
+        android:text="@string/camera_live"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Intercom.Tv" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorControlActivated">@color/brand_light</item>
+        <item name="android:colorBackground">@color/surface</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_dim</item>
+        <!-- A TV has no bars, but a phone running this app for testing does:
+             blend them into the page rather than a teal strip. -->
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+    </style>
+
+    <style name="Theme.Intercom.Tv.Call" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Sized for reading from a sofa, not from a desk. -->
+    <style name="TvHeadline">
+        <item name="android:textSize">56sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">12</item>
+    </style>
+
+    <style name="TvSubhead">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/text_dim</item>
+        <item name="android:shadowColor">@color/black</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+
+    <!-- Buttons for a remote: the one with focus turns green, so it is always
+         obvious which button OK will press. -->
+    <style name="Intercom.Tv.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:minWidth">220dp</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingEnd">32dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/tv_button_text</item>
+        <item name="backgroundTint">@color/tv_button_bg</item>
+        <item name="iconTint">@color/tv_button_text</item>
+        <item name="iconSize">28dp</item>
+        <item name="iconPadding">12dp</item>
+        <item name="cornerRadius">32dp</item>
+    </style>
+
+    <style name="Intercom.Tv.Button.Primary">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/tv_button_primary_bg</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="Intercom.Tv.Field" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/bg_tv_field</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_dim</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Intercom.Tv.Label" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/text_dim</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Intercom.Tv.Section" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/brand_light</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
